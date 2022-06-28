@@ -16,6 +16,7 @@ function App() {
         <Route path="/details/:id" element={<Details/>}></Route>
         <Route path="/apply" element={<Apply/>}></Route>
       </Routes>
+      
 
      </BrowserRouter>
     </div>
