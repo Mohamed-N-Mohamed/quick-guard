@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   return (
-    <div className='flex justify-center items-center w-full p-4 bg-black text-gray-200 md:justify-start'>
+    <div className='flex justify-center items-center w-full p-4 bg-black text-gray-200 md:justify-start text-xs md:text-base'>
       <div className="title">
         <h1 className='text-base md:text-xl'>Quick Guard</h1>
       </div>
