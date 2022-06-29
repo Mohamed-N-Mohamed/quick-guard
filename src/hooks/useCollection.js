@@ -3,13 +3,15 @@ import { projectFirestore } from "../firebase/config"
 export const useCollection = (collection) => {
 
   //states
-  const [documents, setDocuments] = useState(null)
-  const [error, setError] = useState(null)
+  const [documents, setDocuments] = useState(null);
+  const [error, setError] = useState(null);
 
 
   useEffect(() => {
-    let ref = projectFirestore.collection(collection)
-      ref.onSnapshot(snapshot => {
+    const firestore = projectFirestore.collection(collection)
+      firestore.onSnapshot(snapshot => {
+      //log snapshot
+      // console.log(snapshot)  
       let results = []
       //find data and store in results array
       snapshot.docs.forEach(doc => {
@@ -18,6 +20,7 @@ export const useCollection = (collection) => {
       
       // update state
       setDocuments(results)
+      //set error
       setError(null)
     }, error => {
       console.log(error)
@@ -25,10 +28,6 @@ export const useCollection = (collection) => {
     })
    
   }, [collection])
-
   return { documents, error }
-
-  
-  
 
 }
