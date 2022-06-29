@@ -23,7 +23,6 @@ export default function SecurityLists({guards}) {
 
             <span className='inline-flex items-center  py-2 px-3 text-sm font-medium text-center text-white bg-black rounded-lg  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ml-8'>
               {guard.location}
-
             </span>
         </div>
     </div>
