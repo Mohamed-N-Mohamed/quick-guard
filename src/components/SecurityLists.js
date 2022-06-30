@@ -2,12 +2,19 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 
-export default function SecurityLists({guards}) {
+export default function SecurityLists({guards, search}) {
   return (
     <div className='guards-list md:flex md:justify-center md:items-center gap-4 md:flex-wrap'>
       {guards.length === 0 && <p className='text-2xl text-red-300'>No Secuirty Guards in the database</p>}
 
-      {guards.map((guard) => {
+      {guards.filter((guard) =>{
+        if(search ===''){
+          return guard
+        } else if(guard.location.toLowerCase().includes(search.toLowerCase())){
+          return guard
+        }
+
+      }).map((guard) => {
         if(guard.approved){
           return (
             <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-4" key={guard.id}>

@@ -2,18 +2,15 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 export default function SecurityInfo({ info }) {
-
-  console.log(info)
   
   return (
-
     <div className='container p-4 '>
       <div className="respnse-title py-8 ">
         <h3 className='text-4xl pb-4 font-bold'>Responsiblity</h3>
       </div>
       {info.res.map((res) => (
         <div className='py-4 px-6 list-disc text-lg' key={res}>
-          <li clas>{res}</li>
+          <li className=''>{res}</li>
         </div>
       ))}
 
@@ -21,9 +18,10 @@ export default function SecurityInfo({ info }) {
         <h3 className='text-4xl pb-4 font-bold'>Skills</h3>
       </div>
 
-      {info.skills.map((skills) => (
-        <div className='py-4 px-6 list-disc text-lg' key={skills}>
-          <li clas>{skills}</li>
+      {info.skills.map((res) => (
+        <div className='py-4 px-6 list-disc text-lg' key={res}>
+          {/* Warning: Received `true` for a non-boolean attribute `className`.*/}
+          {<li className>{res}</li> }
         </div>
       ))}
 

@@ -3,8 +3,8 @@ import { projectFirestore } from "../firebase/config"
 export const useCollection = (collection) => {
 
   //states
-  const [documents, setDocuments] = useState(null)
-  const [error, setError] = useState(null)
+  const [documents, setDocuments] = useState([])
+  const [error, setError] = useState(false)
 
 
   useEffect(() => {
